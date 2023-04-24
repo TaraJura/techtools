@@ -1,5 +1,10 @@
 %form.dropzone#myId{:action => "/"}
-/ button to relod page
-%button.btn.btn-success{type: "button", onclick: "location.reload();", style: "margin-top: 10px;"}
+%button.btn.btn-success.mt-2{"data-bs-target" => "#exampleModal", "data-bs-toggle" => "modal", :type => "button"}
   = "Náhled"
-%iframe#invoice-preview{:src => "", :style => "width: 100%; height: 5000px; display: none;"},
+  
+/ Modal
+#exampleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :tabindex => "-1"}
+  .modal-dialog.modal-xl
+    .modal-content
+      .modal-body
+        %iframe#invoice-preview{:src => "", :style => "width: 100%; height: 90vh; display: none;"},

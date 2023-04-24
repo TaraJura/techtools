@@ -6,8 +6,10 @@ consumer.subscriptions.create("PreviewChannel", {
   },
 
   received(data) {
-    console.log(data);
-
+    if (data.path == null) {
+      console.log(data)
+    }
+    console.log(data)
     const cookies = document.cookie.split('; ');
     const myCookie = cookies.find(cookie => cookie.startsWith('current_user='));
     const myCookieValue = myCookie ? myCookie.split('=')[1] : null;
