@@ -9,7 +9,7 @@
           .col-sm-6.border-end.border-end.border-bottom
             %h5.font-weight-bold Dodavatel
             %hr
-            .row.text-center.mb-2
+            .row.mb-2.ps-5
               %h6.font-weight-bold
                 = @supplier[:supplier_name]
               %p.mb-0
@@ -18,22 +18,26 @@
                 = @supplier[:supplier_city]
               %p
                 = @supplier[:supplier_country]
-            .row
-              %dl
-                %dt.mb-0= 'IČO'
-                %dd.mb-0= @supplier[:supplier_ico]
-                %dt.mb-2= 'DIČ'
-                %dd.mb-0= @supplier[:supplier_dic]
-                %dt.mb-0= 'Kontakt'
-                %dd.mb-0= @supplier[:supplier_contact]
-                %dt.mb-0= 'Telefon'
-                %dd.mb-0= @supplier[:supplier_phone]
-                %dt.mb-0= 'Email'
-                %dd.mb-0= @supplier[:supplier_email]
+            .row.ps-5.mb-3
+              %span
+                = 'IČO: '
+                = @supplier[:supplier_ico]
+                %br
+                = 'DIČ: '
+                = @supplier[:supplier_dic]
+                %br
+                = 'Kontakt: '
+                = @supplier[:supplier_contact]
+                %br
+                = 'Telefon: '
+                = @supplier[:supplier_phone]
+                %br
+                = 'Email: '
+                = @supplier[:supplier_email]
           .col-sm-6.border-bottom
             %h5.font-weight-bold Odběratel
             %hr
-            .row.text-center.mb-2
+            .row.mb-2.ps-3
               %h6.font-weight-bold
                 = @subscriber[:subscriber_name]
               %p.mb-0
@@ -42,46 +46,50 @@
                 = @subscriber[:subscriber_city]
               %p
                 = @subscriber[:subscriber_country]
-            .row
-              %dl
-                %dt.mb-0= 'IČO'
-                %dd.mb-0= @subscriber[:subscriber_ico]
-                %dt.mb-2= 'DIČ'
-                %dd.mb-0= @subscriber[:subscriber_dic]
-                %dt.mb-0= 'Kontakt'
-                %dd.mb-0= @subscriber[:subscriber_contact]
-                %dt.mb-0= 'Telefon'
-                %dd.mb-0= @subscriber[:subscriber_phone]
-                %dt.mb-0= 'Email'
-                %dd.mb-0= @subscriber[:subscriber_email]
+            .row.ps-3.mb-3
+              %span
+                = 'IČO: '
+                = @subscriber[:subscriber_ico]
+                %br
+                = 'DIČ: '
+                = @subscriber[:subscriber_dic]
+                %br
+                = 'Kontakt: '
+                = @subscriber[:subscriber_contact]
+                %br
+                = 'Telefon: '
+                = @subscriber[:subscriber_phone]
+                %br
+                = 'Email: '
+                = @subscriber[:subscriber_email]
         .row.mt-5
-          %h5.font-weight-bold.mb-3 Platební podmínky
+          %h5.font-weight-bold Platební podmínky
           %hr
           %dl.mb-0.col-sm-6.border-end
             %dt.mb-0= 'Způsob platby'
-            %dd.mb-0= @payment[:payment_method]
+            %dd.mb-0= @payment[:payment_method] ? @payment[:payment_method] : 'Neuvedeno' 
             %dt.mb-0= 'Banka'
-            %dd.mb-0= @payment[:payment_name]
+            %dd.mb-0= @payment[:payment_name] ? @payment[:payment_name] : 'Neuvedeno'
             %dt.mb-0= 'Číslo účtu'
             %dd.mb-0= @payment[:payment_id] + '/' + @payment[:payment_bank_code] if @payment[:payment_id] && @payment[:payment_bank_code]
             %dt.mb-0= 'IBAN'
-            %dd.mb-0= @payment[:payment_iban]
+            %dd.mb-0= @payment[:payment_iban] ? @payment[:payment_iban] : 'Neuvedeno'
             %dt.mb-0= 'SWIFT'
-            %dd.mb-0= @payment[:payment_bic]
+            %dd.mb-0= @payment[:payment_bic] ? @payment[:payment_bic] : 'Neuvedeno'       
           %dl.mb-0.col-sm-6
             %dt.mb-0= 'Datum splatnosti'
-            %dd.mb-0= @payment[:payment_due_date]
+            %dd.mb-0= @payment[:payment_due_date] ? @payment[:payment_due_date] : 'Neuvedeno'
             %dt.mb-0= 'Variabilní symbol'
-            %dd.mb-0= @payment[:payment_variable_symbol]
+            %dd.mb-0= @payment[:payment_variable_symbol] ? @payment[:payment_variable_symbol] : 'Neuvedeno'
             %dt.mb-0= 'Konstantní symbol'
-            %dd.mb-0= @payment[:payment_constant_symbol]
+            %dd.mb-0= @payment[:payment_constant_symbol] ? @payment[:payment_constant_symbol] : 'Neuvedeno'
             %dt.mb-0= 'Specifický symbol'
-            %dd.mb-0= @payment[:payment_specific_symbol]
+            %dd.mb-0= @payment[:payment_specific_symbol].present? ? @payment[:payment_specific_symbol] : 'Neuvedeno'
             %dt.mb-0= 'Částka úhrady'
-            %dd.mb-0= @payment[:payment_paid_amount]
+            %dd.mb-0= @payment[:payment_paid_amount] ? @payment[:payment_paid_amount] : 'Neuvedeno'
         %hr
         .row.mt-5
-        %h5.font-weight-bold.mb-3 Položky faktury
+        %h5.font-weight-bold Položky faktury
         %table.table
           %thead.table-primary
             %tr

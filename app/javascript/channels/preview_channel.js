@@ -16,10 +16,15 @@ consumer.subscriptions.create("PreviewChannel", {
 
     if (myCookieValue == String(data.user)) {
       iframe = document.getElementById('invoice-preview')
+      iframe2 = document.getElementById('invoice-preview2')
       iframe.style.display = 'block'
       iframe.src = 'isdoc/' + data.path
+      iframe2.style.display = 'block'
+      iframe2.src = 'isdoc/' + data.path
       button = document.getElementById('previw-button')
       button.disabled = false
+      preview_text = document.getElementById('preview-text')
+      preview_text.style.display = 'none'
     }
   }
 });

@@ -1,16 +1,18 @@
-%h1.text-center
-  = 'Nahrát .isdoc soubor'
+%h1.text-center.mt-5
+  = 'Nahraj .isdoc soubor'
 %form.dropzone#myId{:action => "/"}
-%button.btn.btn-success.mt-2#previw-button.me-2{"data-bs-target" => "#exampleModal", "data-bs-toggle" => "modal", :type => "button", disabled: true}
+%button.btn.btn-success.mt-3#previw-button{"data-bs-target" => "#exampleModal", "data-bs-toggle" => "modal", :type => "button", disabled: true}
   = "Náhled"
-%button.btn.btn-primary.mt-2#previw-button.me-2{"data-bs-target" => "#exampleModal", "data-bs-toggle" => "modal", :type => "button", disabled: true}
+%button.btn.btn-primary.mt-3#previw-button.float-end{"data-bs-target" => "#exampleModal", "data-bs-toggle" => "modal", :type => "button", disabled: true}
   = "Konvertovat do .pdf"
-%button.btn.btn-warning.mt-2#previw-button{"data-bs-target" => "#exampleModal", "data-bs-toggle" => "modal", :type => "button", disabled: true}
+%button.btn.btn-warning.mt-3#previw-button.me-3.float-end{"data-bs-target" => "#exampleModal", "data-bs-toggle" => "modal", :type => "button", disabled: true}
   = "Konvertovat do .png"
-
-/ Modal
 #exampleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :tabindex => "-1"}
   .modal-dialog.modal-xl
     .modal-content
       .modal-body
         %iframe#invoice-preview{:src => "", :style => "width: 100%; height: 90vh; display: none;"},
+%hr.mt-3.mb-3
+%p.text-center#preview-text.mt-5
+  = 'Tady se zobrazí náhled faktury'
+%iframe.text-center#invoice-preview2{:src => "", :style => "width: 100%; height: 2000px; display: none;"}
