@@ -1,0 +1,13 @@
+development:
+  smtp:
+    address: localhost
+    port: 1025
+    openssl_verify_mode: none
+
+test:
+  smtp:
+    address: localhost
+    port: 1025
+    openssl_verify_mode: none
+
+production: {}

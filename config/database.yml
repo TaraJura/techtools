@@ -1,0 +1,19 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: 5
+  username: <%= AppSettings.fetch(:database, :username) %>
+  password: <%= AppSettings.fetch(:database, :password) %>
+  socket: <%= AppSettings.fetch(:database, :socket) { '/var/run/mysqld/mysqld.sock' } %>
+
+development:
+  <<: *default
+  database: <%= AppSettings.fetch(:database, :name) %>
+
+test:
+  <<: *default
+  database: <%= AppSettings.fetch(:database, :name) %>
+
+production:
+  <<: *default
+  database: <%= AppSettings.fetch(:database, :name) %>

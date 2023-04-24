@@ -1,0 +1,64 @@
+require:
+- rubocop-performance
+- rubocop-rails
+- rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - vendor/**/*
+    - db/**/*
+    - node_modules/**/*
+    - tmp/**/*
+    - bin/*
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+Layout/LineLength:
+  Max: 100
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Metrics/AbcSize:
+  Max: 20
+Metrics/BlockLength:
+  Exclude:
+    - lib/tasks/**/*
+    - config/**/*
+    - spec/**/*
+Metrics/MethodLength:
+  Max: 15
+  CountAsOne:
+    - array
+    - hash
+
+Naming/BlockForwarding:
+  Enabled: false
+
+Rails/ActionOrder:
+  Enabled: false
+Rails/FilePath:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 10
+RSpec/FilePath:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+Style/EmptyMethod:
+  Enabled: false
+Style/FormatString:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - spec/**/*
+Style/HashSyntax:
+  EnforcedShorthandSyntax: either
+Style/Lambda:
+  EnforcedStyle: literal
+Style/TrailingUnderscoreVariable:
+  Enabled: false
+Style/WordArray:
+  Enabled: false

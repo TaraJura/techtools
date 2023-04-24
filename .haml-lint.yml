@@ -1,0 +1,13 @@
+linters:
+  ClassesBeforeIds:
+    EnforcedStyle: id
+  LineLength:
+    enabled: false
+  ViewLength:
+    max: 200
+exclude:
+  - vendor/**/*
+  - db/**/*
+  - node_modules/**/*
+  - tmp/**/*
+  - bin/*

@@ -1,0 +1,68 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'fileutils'
+require 'io/console'
+
+# path to your application root.
+APP_ROOT = File.expand_path('..', __dir__)
+
+def system!(*args)
+  system(*args) || abort("\n== Command #{args} failed ==")
+end
+
+def create_settings_override
+  case ARGV.size
+  when 0
+    puts '== Development and test databases will be created using the environment as suffix =='
+    print 'Database name (without environment suffix): '
+    database = gets.chomp
+    print 'Database username: '
+    username = gets.chomp
+    password = IO.console.getpass('Database password: ').chomp
+    puts '== Creating config/settings_override.yml =='
+    settings_override(database, username, password)
+  when 3
+    settings_override(ARGV[0], ARGV[1], ARGV[2])
+  else raise 'Invalid arguments given. \
+    Expected <database> <username> <password> or no arguments for interactive setup'
+  end
+end
+
+def settings_override(database, username, password)
+  File.write 'config/settings_override.yml', <<~YAML
+    default:
+      database: &database
+        username: #{username}
+        password: #{password}
+
+    development:
+      database:
+        <<: *database
+        name: #{database}_development
+
+    test:
+      database:
+        <<: *database
+        name: #{database}_test
+  YAML
+end
+
+FileUtils.chdir APP_ROOT do
+  puts '== Installing dependencies =='
+  system! 'gem install bundler --conservative'
+  system('bundle check') || system!('bundle install')
+  system!('yarn install')
+
+  if File.exist?('config/settings_override.yml') && ARGV.empty?
+    puts '== Skipping config/settings_override.yml as it already exists'
+  else
+    create_settings_override
+  end
+
+  puts '== Preparing database =='
+  system! 'SKIP_TEST_DATABASE=true bin/rails db:prepare'
+  system! 'RAILS_ENV=test bin/rails db:prepare'
+
+  puts '== Setup complete, you may run specs with `bin/rails spec` =='
+end
