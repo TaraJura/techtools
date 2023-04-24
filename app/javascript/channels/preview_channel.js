@@ -18,6 +18,8 @@ consumer.subscriptions.create("PreviewChannel", {
       iframe = document.getElementById('invoice-preview')
       iframe.style.display = 'block'
       iframe.src = 'isdoc/' + data.path
+      button = document.getElementById('previw-button')
+      button.disabled = false
     }
   }
 });

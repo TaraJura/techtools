@@ -1,7 +1,13 @@
+%h1.text-center
+  = 'Nahrát .isdoc soubor'
 %form.dropzone#myId{:action => "/"}
-%button.btn.btn-success.mt-2{"data-bs-target" => "#exampleModal", "data-bs-toggle" => "modal", :type => "button"}
+%button.btn.btn-success.mt-2#previw-button.me-2{"data-bs-target" => "#exampleModal", "data-bs-toggle" => "modal", :type => "button", disabled: true}
   = "Náhled"
-  
+%button.btn.btn-primary.mt-2#previw-button.me-2{"data-bs-target" => "#exampleModal", "data-bs-toggle" => "modal", :type => "button", disabled: true}
+  = "Konvertovat do .pdf"
+%button.btn.btn-warning.mt-2#previw-button{"data-bs-target" => "#exampleModal", "data-bs-toggle" => "modal", :type => "button", disabled: true}
+  = "Konvertovat do .png"
+
 / Modal
 #exampleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :tabindex => "-1"}
   .modal-dialog.modal-xl

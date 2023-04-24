@@ -22,10 +22,14 @@ class InvoicesController < ApplicationController
 
   # POST /invoices or /invoices.json
   def create
-    @invoice = Invoice.new
-    @invoice.file.attach(params[:file])
-    @invoice.save!
-    ActionCable.server.broadcast 'preview_channel', { path: @invoice.id, user: cookies[:current_user] }
+      @invoice = Invoice.new
+      @invoice.file.attach(params[:file])
+    if @invoice.file.filename.to_s.split('.').last == 'isdoc'
+      @invoice.save!
+      ActionCable.server.broadcast 'preview_channel', { path: @invoice.id, user: cookies[:current_user] } if @invoice.file.filename.to_s.split('.').last == 'isdoc'
+    else
+      render plain: 'Vkládejte pouze .isdoc soubory', status: :unprocessable_entity
+    end
   end
 
   # PATCH/PUT /invoices/1 or /invoices/1.json
