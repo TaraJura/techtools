@@ -1,4 +1,5 @@
 class InvoicesController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_invoice, only: %i[ show edit update destroy ]
 
   # GET /invoices or /invoices.json
@@ -21,17 +22,9 @@ class InvoicesController < ApplicationController
 
   # POST /invoices or /invoices.json
   def create
-    @invoice = Invoice.new(invoice_params)
-
-    respond_to do |format|
-      if @invoice.save
-        format.html { redirect_to invoice_url(@invoice), notice: "Invoice was successfully created." }
-        format.json { render :show, status: :created, location: @invoice }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @invoice.errors, status: :unprocessable_entity }
-      end
-    end
+    @invoice = Invoice.new
+    @invoice.file.attach(params[:file])
+    @invoice.save!
   end
 
   # PATCH/PUT /invoices/1 or /invoices/1.json
