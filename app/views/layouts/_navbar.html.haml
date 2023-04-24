@@ -1,0 +1,21 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-dark
+  .container-fluid
+    %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-mdb-target" => "#navbarSupportedContent", "data-mdb-toggle" => "collapse", :type => "button"}
+      %i.fas.fa-bars
+    #navbarSupportedContent.collapse.navbar-collapse
+      %a.navbar-brand.mt-2.mt-lg-0{:href => "/"}
+        %h2.text-light
+          = 'TechTools'
+      / Left links
+      / %ul.navbar-nav.me-auto.mb-2.mb-lg-0
+      /   %li.nav-item
+      /     %a.nav-link{:href => "#"} Dashboard
+      /   %li.nav-item
+      /     %a.nav-link{:href => "#"} Team
+      /   %li.nav-item
+      /     %a.nav-link{:href => "#"} Projects
+      / Left links
+
+    .d-flex.align-items-center
+      = link_to 'Login', new_user_session_path, class: 'btn btn-outline-light me-2'
+      = link_to 'Register', new_user_registration_path, class: 'btn btn-warning me-2'
