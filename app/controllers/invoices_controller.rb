@@ -25,7 +25,7 @@ class InvoicesController < ApplicationController
     @invoice = Invoice.new
     @invoice.file.attach(params[:file])
     @invoice.save!
-    ActionCable.server.broadcast 'preview_channel', { path: @path_to_doc_preview, user_id: current_user.id }
+    ActionCable.server.broadcast 'preview_channel', { path: @invoice.id }
   end
 
   # PATCH/PUT /invoices/1 or /invoices/1.json
