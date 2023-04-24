@@ -1,0 +1,122 @@
+.row.justify-content-center
+  .col-md-12.col-lg-12
+    .card.border
+      .card-header
+        %h4
+          = 'ID Faktury:' + ' ' + @invoice[:invoice_id]
+      .card-body
+        .row
+          .col-sm-6.border-end.border-end.border-bottom
+            %h5.font-weight-bold Dodavatel
+            %hr
+            .row.text-center.mb-2
+              %h6.font-weight-bold
+                = @supplier[:supplier_name]
+              %p.mb-0
+                = @supplier[:supplier_full_adress]
+              %p.mb-0
+                = @supplier[:supplier_city]
+              %p
+                = @supplier[:supplier_country]
+            .row
+              %dl
+                %dt.mb-0= 'IČO'
+                %dd.mb-0= @supplier[:supplier_ico]
+                %dt.mb-2= 'DIČ'
+                %dd.mb-0= @supplier[:supplier_dic]
+                %dt.mb-0= 'Kontakt'
+                %dd.mb-0= @supplier[:supplier_contact]
+                %dt.mb-0= 'Telefon'
+                %dd.mb-0= @supplier[:supplier_phone]
+                %dt.mb-0= 'Email'
+                %dd.mb-0= @supplier[:supplier_email]
+          .col-sm-6.border-bottom
+            %h5.font-weight-bold Odběratel
+            %hr
+            .row.text-center.mb-2
+              %h6.font-weight-bold
+                = @subscriber[:subscriber_name]
+              %p.mb-0
+                = @subscriber[:subscriber_full_adress]
+              %p.mb-0
+                = @subscriber[:subscriber_city]
+              %p
+                = @subscriber[:subscriber_country]
+            .row
+              %dl
+                %dt.mb-0= 'IČO'
+                %dd.mb-0= @subscriber[:subscriber_ico]
+                %dt.mb-2= 'DIČ'
+                %dd.mb-0= @subscriber[:subscriber_dic]
+                %dt.mb-0= 'Kontakt'
+                %dd.mb-0= @subscriber[:subscriber_contact]
+                %dt.mb-0= 'Telefon'
+                %dd.mb-0= @subscriber[:subscriber_phone]
+                %dt.mb-0= 'Email'
+                %dd.mb-0= @subscriber[:subscriber_email]
+        .row.mt-5
+          %h5.font-weight-bold.mb-3 Platební podmínky
+          %hr
+          %dl.mb-0.col-sm-6.border-end
+            %dt.mb-0= 'Způsob platby'
+            %dd.mb-0= @payment[:payment_method]
+            %dt.mb-0= 'Banka'
+            %dd.mb-0= @payment[:payment_name]
+            %dt.mb-0= 'Číslo účtu'
+            %dd.mb-0= @payment[:payment_id] + '/' + @payment[:payment_bank_code]
+            %dt.mb-0= 'IBAN'
+            %dd.mb-0= @payment[:payment_iban]
+            %dt.mb-0= 'SWIFT'
+            %dd.mb-0= @payment[:payment_bic]
+          %dl.mb-0.col-sm-6
+            %dt.mb-0= 'Datum splatnosti'
+            %dd.mb-0= @payment[:payment_due_date]
+            %dt.mb-0= 'Variabilní symbol'
+            %dd.mb-0= @payment[:payment_variable_symbol]
+            %dt.mb-0= 'Konstantní symbol'
+            %dd.mb-0= @payment[:payment_constant_symbol]
+            %dt.mb-0= 'Specifický symbol'
+            %dd.mb-0= @payment[:payment_specific_symbol]
+            %dt.mb-0= 'Částka úhrady'
+            %dd.mb-0= @payment[:payment_paid_amount]
+        %hr
+        .row.mt-5
+        %h5.font-weight-bold.mb-3 Položky faktury
+        %table.table
+          %thead.table-primary
+            %tr
+              %th= 'Předmět'
+              %th= 'Množství'
+              %th= 'Jedn.cena'
+              %th= 'Sazba DPH'
+              %th= 'Základ'
+              %th= 'DPH'
+              %th= 'Celkem'
+          %tbody
+            - @invoice_lines.each do |line|
+              %tr
+                %td
+                  = line[:item][:item_description]
+                %td
+                  = line[:invoiced_quantity]
+                %td
+                  = line[:unit_price]
+                %td
+                  = line[:classified_tax_category][:percent]
+                %td
+                  = line[:line_extension_amount]
+                %td
+                  = line[:line_extension_tax_amount]
+                %td
+                  = line[:line_extension_amount_tax_inclusive]
+        .row.mt-5.bg-light.p-2
+          %h3.font-weight-bold Celkem
+          %dl.mb-0.col-sm-8
+          %dl.mb-0.col-sm-4
+            %dt.mb-0= 'Základ'
+            %dd.mb-0= @tax_total[:tax_sub_total_final].first[:taxable_amount]
+            %dt.mb-0= 'DPH'
+            %dd.mb-0= @tax_total[:tax_amount]
+            %dt.mb-0= 'Celkem'
+            %dd.mb-0
+              %h2= @legal_monetary_total[:payable_amount]

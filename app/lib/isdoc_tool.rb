@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Isdoc
+class IsdocTool
   def initialize(invoice)
     @invoice = invoice
     @file_key = @invoice.file.key
@@ -29,10 +29,6 @@ class Isdoc
       'Neznámá metoda platby'
     end
   end
-
-  # rubocop:disable Metrics/PerceivedComplexity
-  # rubocop:disable Metrics/CyclomaticComplexity
-  # rubocop:disable Metrics/AbcSize
 
   def convert_to_hash
     doc = Nokogiri::XML.parse File.open(@isdoc)
@@ -170,7 +166,4 @@ class Isdoc
       legal_monetary_total: { tax_exclusive_amount:, tax_inclusive_amount:, already_claimed_tax_exclusive_amount:, already_claimed_tax_inclusive_amount:, difference_tax_exclusive_amount:, difference_tax_inclusive_amount:,
                               payable_rounding_amount:, paid_deposits_amount:, payable_amount: } }
   end
-  # rubocop:enable Metrics/PerceivedComplexity
-  # rubocop:enable Metrics/CyclomaticComplexity
-  # rubocop:enable Metrics/AbcSize
 end

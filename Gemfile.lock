@@ -372,6 +372,7 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   mysql2 (~> 0.5)
+  nokogiri
   pry-rails
   pry-rescue
   pry-stack_explorer
