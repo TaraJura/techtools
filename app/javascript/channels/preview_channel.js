@@ -6,15 +6,16 @@ consumer.subscriptions.create("PreviewChannel", {
   },
 
   received(data) {
+    console.log(data);
 
     const cookies = document.cookie.split('; ');
     const myCookie = cookies.find(cookie => cookie.startsWith('current_user='));
     const myCookieValue = myCookie ? myCookie.split('=')[1] : null;
 
-    if (myCookieValue == String(data.user_id)) {
+    if (myCookieValue == String(data.user)) {
       iframe = document.getElementById('invoice-preview')
       iframe.style.display = 'block'
-      iframe.src = data.path
+      iframe.src = 'isdoc/' + data.path
     }
   }
 });

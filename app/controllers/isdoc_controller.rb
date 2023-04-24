@@ -12,5 +12,7 @@ class IsdocController < ApplicationController
     @invoice_lines = invoice_data[:invoice_lines]
     @tax_total = invoice_data[:tax_total]
     @legal_monetary_total = invoice_data[:legal_monetary_total]
+
+    render layout: 'minimal'
   end
 end
