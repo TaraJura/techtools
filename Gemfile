@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.4'
+ruby '3.1.2'
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
 gem 'devise'
@@ -19,6 +19,7 @@ gem 'pry-rails'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
 gem 'rails-i18n'
+gem 'ruby-openai'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'

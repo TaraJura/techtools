@@ -1,0 +1,18 @@
+%h1.d-flex.align-items-center.justify-content-center
+  GPT-3.5 turbo model
+= form_with(model: @question) do |form|
+  .row.mb-5
+    .col
+      = form.text_field :text, class: 'form-control border', id: 'textAreaExample', required: true
+    .d-flex.align-items-center.justify-content-center.mt-2
+      = form.submit 'Ask', class: 'btn btn-primary'
+.row.mt-4
+  .col-sm-12.col-md-12
+    - @questions.each do |question|
+      .row.comment.my
+        .col-sm-12.mb-3
+          = question.created_at.strftime('%d.%m.%Y %H:%M')
+          %b
+            = question.text
+        .col-sm-12
+          = question.response

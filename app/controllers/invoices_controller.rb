@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class InvoicesController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :set_invoice, only: %i[ show edit update destroy ]
+  before_action :set_invoice, only: %i[show edit update destroy]
 
   # GET /invoices or /invoices.json
   def index
@@ -22,11 +24,15 @@ class InvoicesController < ApplicationController
 
   # POST /invoices or /invoices.json
   def create
-      @invoice = Invoice.new
-      @invoice.file.attach(params[:file])
+    @invoice = Invoice.new
+    @invoice.file.attach(params[:file])
     if @invoice.file.filename.to_s.split('.').last == 'isdoc'
       @invoice.save!
-      ActionCable.server.broadcast 'preview_channel', { path: @invoice.id, user: cookies[:current_user] } if @invoice.file.filename.to_s.split('.').last == 'isdoc'
+      if @invoice.file.filename.to_s.split('.').last == 'isdoc'
+        ActionCable.server.broadcast 'preview_channel',
+                                     { path: @invoice.id,
+                                       user: cookies[:current_user] }
+      end
     else
       render plain: 'Vkládejte pouze .isdoc soubory', status: :unprocessable_entity
     end
@@ -36,7 +42,9 @@ class InvoicesController < ApplicationController
   def update
     respond_to do |format|
       if @invoice.update(invoice_params)
-        format.html { redirect_to invoice_url(@invoice), notice: "Invoice was successfully updated." }
+        format.html do
+          redirect_to invoice_url(@invoice), notice: 'Invoice was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: @invoice }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -50,19 +58,20 @@ class InvoicesController < ApplicationController
     @invoice.destroy
 
     respond_to do |format|
-      format.html { redirect_to invoices_url, notice: "Invoice was successfully destroyed." }
+      format.html { redirect_to invoices_url, notice: 'Invoice was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_invoice
-      @invoice = Invoice.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def invoice_params
-      params.require(:invoice).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_invoice
+    @invoice = Invoice.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def invoice_params
+    params.require(:invoice).permit(:name)
+  end
 end
