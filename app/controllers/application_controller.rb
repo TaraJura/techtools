@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  # before_action :authenticate_user!
+  skip_before_action :verify_authenticity_token
   before_action :cookie_user
+  # before_action :authenticate_user!
 
   def cookie_user
     return if cookies[:current_user].present?

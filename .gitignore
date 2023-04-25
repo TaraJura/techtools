@@ -37,3 +37,4 @@
 
 /node_modules
 config/settings_override.yml
+config/openai_api.key

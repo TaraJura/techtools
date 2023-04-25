@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class InvoicesController < ApplicationController
-  skip_before_action :verify_authenticity_token
   before_action :set_invoice, only: %i[show edit update destroy]
 
   # GET /invoices or /invoices.json
