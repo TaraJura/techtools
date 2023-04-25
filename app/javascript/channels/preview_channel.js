@@ -23,8 +23,6 @@ consumer.subscriptions.create("PreviewChannel", {
       iframe2.src = 'isdoc/' + data.path
       button = document.getElementById('previw-button')
       button.disabled = false
-      preview_text = document.getElementById('preview-text')
-      preview_text.style.display = 'none'
     }
   }
 });

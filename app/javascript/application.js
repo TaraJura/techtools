@@ -3,7 +3,9 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import "./channels"
 
-let myDropzone = new Dropzone("form#myId", { url: "/invoices"});
+document.addEventListener('turbo:load', () => {
+  let myDropzone = new Dropzone("form#myId", { url: "/invoices"});
 
-const myModal = document.getElementById('myModal')
-const myInput = document.getElementById('myInput')
+  const myModal = document.getElementById('myModal')
+  const myInput = document.getElementById('myInput')
+})
