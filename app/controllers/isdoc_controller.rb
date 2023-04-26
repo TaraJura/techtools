@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
 class IsdocController < ApplicationController
+  def index
+    @invoices = Invoice.all
+  end
+
   def show
     invoice = Invoice.find(params[:id])
-    invoice_data = IsdocTool.new(invoice).convert_to_hash 
+    invoice_data = IsdocTool.new(invoice).convert_to_hash
     @supplier = invoice_data[:supplier]
     @subscriber = invoice_data[:subscriber]
     @invoice = invoice_data[:invoice]
