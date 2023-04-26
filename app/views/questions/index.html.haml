@@ -9,9 +9,8 @@
 .row.mt-4
   .col-sm-12.col-md-12
     - @questions.each do |question|
-      .row.comment.my
+      .row.comment.my.mb-5
         .col-sm-12.mb-3
-          = question.created_at.strftime('%d.%m.%Y %H:%M')
           %b
             = question.text
         .col-sm-12
