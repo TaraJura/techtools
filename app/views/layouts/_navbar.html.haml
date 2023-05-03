@@ -1,21 +1,19 @@
-%nav.navbar.navbar-expand-lg.navbar-light.bg-dark
+%nav.navbar.navbar-expand-lg.bg-body-tertiary.bg-dark{ 'data-bs-theme' => "dark" }
   .container-fluid
-    %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-mdb-target" => "#navbarSupportedContent", "data-mdb-toggle" => "collapse", :type => "button"}
-      %i.fas.fa-bars
-    #navbarSupportedContent.collapse.navbar-collapse
-      = link_to '#', class: 'navbar-brand me-5' do
-        %h2.text-light
-          = 'TechTools'
-      %ul.navbar-nav.me-auto.mb-2.mb-lg-0
-        %li.nav-item
-          = link_to 'chatGPT-3.5', questions_path, class: 'nav-link text-light'
-        %li.nav-item
-          = link_to '.isdoc', isdoc_index_path, class: 'nav-link text-light'
-    - if user_signed_in?
-      .d-flex.align-items-center
-        = link_to 'Profile', edit_user_registration_path, class: 'btn btn-warning me-2'
-        = button_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-outline-light me-2'
-    - else
-      .d-flex.align-items-center
-        = link_to 'Login', new_user_session_path, class: 'btn btn-outline-light me-2'
-        = link_to 'Register', new_user_registration_path, class: 'btn btn-warning me-2'
+    = link_to '#', class: 'navbar-brand me-5' do
+      %h2.text-light
+        = 'TechTools'
+    %button.navbar-toggler{"aria-controls" => "navbarNavAltMarkup", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarNavAltMarkup", "data-bs-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarNavAltMarkup.collapse.navbar-collapse
+      .navbar-nav
+        = link_to 'chatGPT-3.5', questions_path, class: 'nav-link text-light nav-link'
+        = link_to '.isdoc', isdoc_index_path, class: 'nav-link text-light nav-link'
+//    - if user_signed_in?
+//      .d-flex.align-items-center
+//        = link_to 'Profile', edit_user_registration_path, class: 'btn btn-warning me-2'
+//        = button_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-outline-light me-2'
+//    - else
+//      .d-flex.align-items-center
+//        = link_to 'Login', new_user_session_path, class: 'btn btn-outline-light me-2'
+//        = link_to 'Register', new_user_registration_path, class: 'btn btn-warning me-2'
