@@ -17,4 +17,10 @@ class IsdocController < ApplicationController
     @legal_monetary_total = invoice_data[:legal_monetary_total]
     render layout: 'minimal'
   end
+
+  def download_example
+    filename = 'example.isdoc'
+    path = Rails.root.join('public', 'test.isdoc')
+    send_file path, filename: filename, type: 'application/octet-stream', disposition: 'attachment'
+  end
 end

@@ -1,13 +1,15 @@
-
-%h1.text-center.mt-5
-  Nahraj .isdoc soubor
-%form.dropzone{id: "myId", action: "/"}
-%button.btn.btn-success.mt-3#previw-button{type: "button", "data-bs-toggle": "modal", "data-bs-target": "#exampleModal", disabled: true}
-  Náhled
-%button.btn.btn-primary.mt-3#previw-button.float-end{type: "button", "data-bs-toggle": "modal", "data-bs-target": "#exampleModal", disabled: true}
-  Konvertovat do .pdf
-%button.btn.btn-warning.mt-3#previw-button.me-3.float-end{type: "button", "data-bs-toggle": "modal", "data-bs-target": "#exampleModal", disabled: true}
-  Konvertovat do .png
+.row
+  %h1.text-center.mt-5
+    Nahraj .isdoc soubor
+  %form.dropzone{id: "myId", action: "/"}
+.col
+  %button.btn.btn-success.mt-3#previw-button{type: "button", "data-bs-toggle": "modal", "data-bs-target": "#exampleModal", disabled: true}
+    Náhled
+  %button.btn.btn-primary.mt-3#previw-button.float-end{type: "button", "data-bs-toggle": "modal", "data-bs-target": "#exampleModal", disabled: true}
+    Konvertovat do .pdf
+  %button.btn.btn-warning.mt-3#previw-button.me-3.float-end{type: "button", "data-bs-toggle": "modal", "data-bs-target": "#exampleModal", disabled: true}
+    Konvertovat do .png
+  = link_to 'Příklad .isdoc', download_example_path, class: 'btn btn-primary m-3 float-end'
 #exampleModal.modal.fade{tabindex: "-1", "aria-labelledby": "exampleModalLabel", "aria-hidden": "true"}
   .modal-dialog.modal-xl
     .modal-content

@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Invoice xmlns="http://isdoc.cz/namespace/2013" version="6.0.1">
+	<DocumentType>
+		1
+	</DocumentType>
+	<TargetConsolidator />
+	<ClientOnTargetConsolidator />
+	<ID>
+		TEST-123/2023
+	</ID>
+	<UUID>
+		1236581566-4DCA-44D5-B03E-555555555555
+	</UUID>
+	<IssuingSystem>
+		ABRA Gen® 23.0.3
+	</IssuingSystem>
+	<IssueDate>
+		2023-03-01
+	</IssueDate>
+	<TaxPointDate>
+		2023-03-01
+	</TaxPointDate>
+	<VATApplicable>
+		true
+	</VATApplicable>
+	<ElectronicPossibilityAgreementReference>
+		databáze MySQL divize D600
+	</ElectronicPossibilityAgreementReference>
+	<Note>
+		generováno dle ABRA FIT! za období 03.2023
+	</Note>
+	<LocalCurrencyCode>
+		CZK
+	</LocalCurrencyCode>
+	<CurrRate>
+		1
+	</CurrRate>
+	<RefCurrRate>
+		1
+	</RefCurrRate>
+	<AccountingSupplierParty>
+		<Party>
+			<PartyIdentification>
+				<UserID />
+				<CatalogFirmIdentification>
+					0
+				</CatalogFirmIdentification>
+				<ID>
+					123456789
+				</ID>
+			</PartyIdentification>
+			<PartyName>
+				<Name>
+					Tesla s.r.o.
+				</Name>
+			</PartyName>
+			<PostalAddress>
+				<StreetName>
+					Slevacska
+				</StreetName>
+				<BuildingNumber>
+					123/7b
+				</BuildingNumber>
+				<CityName>
+					Praha 55
+				</CityName>
+				<PostalZone>
+					123 45
+				</PostalZone>
+				<Country>
+					<IdentificationCode>
+						CZ
+					</IdentificationCode>
+					<Name>
+						Česká republika
+					</Name>
+				</Country>
+			</PostalAddress>
+			<PartyTaxScheme>
+				<CompanyID>
+					CZ123456789
+				</CompanyID>
+				<TaxScheme>
+					VAT
+				</TaxScheme>
+			</PartyTaxScheme>
+			<RegisterIdentification>
+				<RegisterKeptAt>
+					v OR u Městského soudu v Praze
+				</RegisterKeptAt>
+				<RegisterFileRef>
+					odd. B, vl. 4475
+				</RegisterFileRef>
+				<RegisterDate>
+					1996-12-31
+				</RegisterDate>
+			</RegisterIdentification>
+			<Contact>
+				<Name>
+					pobočka Praha
+				</Name>
+				<Telephone>
+					+420 555 555 555
+				</Telephone>
+				<ElectronicMail>
+					obchod@pes.eu
+				</ElectronicMail>
+			</Contact>
+		</Party>
+	</AccountingSupplierParty>
+	<AccountingCustomerParty>
+		<Party>
+			<PartyIdentification>
+				<UserID>
+					P58580
+				</UserID>
+				<CatalogFirmIdentification>
+					0
+				</CatalogFirmIdentification>
+				<ID>
+					41195078
+				</ID>
+			</PartyIdentification>
+			<PartyName>
+				<Name>
+					Elon Musk s.r.o.
+				</Name>
+			</PartyName>
+			<PostalAddress>
+				<StreetName>
+					Lidická
+				</StreetName>
+				<BuildingNumber>
+					123/45
+				</BuildingNumber>
+				<CityName>
+					Praha 99
+				</CityName>
+				<PostalZone>
+					123 12
+				</PostalZone>
+				<Country>
+					<IdentificationCode>
+						CZ
+					</IdentificationCode>
+					<Name />
+				</Country>
+			</PostalAddress>
+			<PartyTaxScheme>
+				<CompanyID>
+					CZ41195078
+				</CompanyID>
+				<TaxScheme>
+					VAT
+				</TaxScheme>
+			</PartyTaxScheme>
+			<Contact>
+				<Name />
+				<Telephone />
+				<ElectronicMail />
+			</Contact>
+		</Party>
+	</AccountingCustomerParty>
+	<DeliveryNoteReferences>
+		<DeliveryNoteReference id="DLS-3847/2023">
+			<ID>
+				DLS-1234/2023
+			</ID>
+			<IssueDate>
+				2023-03-01
+			</IssueDate>
+		</DeliveryNoteReference>
+	</DeliveryNoteReferences>
+	<InvoiceLines>
+		<InvoiceLine>
+			<ID>
+				DA5555555
+			</ID>
+			<InvoicedQuantity unitCode="">
+				0
+			</InvoicedQuantity>
+			<LineExtensionAmount>
+				0
+			</LineExtensionAmount>
+			<LineExtensionAmountTaxInclusive>
+				0
+			</LineExtensionAmountTaxInclusive>
+			<LineExtensionTaxAmount>
+				0
+			</LineExtensionTaxAmount>
+			<UnitPrice>
+				0
+			</UnitPrice>
+			<UnitPriceTaxInclusive>
+				0
+			</UnitPriceTaxInclusive>
+			<ClassifiedTaxCategory>
+				<Percent>
+					0
+				</Percent>
+				<VATCalculationMethod>
+					0
+				</VATCalculationMethod>
+				<VATApplicable>
+					true
+				</VATApplicable>
+			</ClassifiedTaxCategory>
+			<Note />
+			<VATNote />
+			<Item>
+				<Description>
+					Na základě smlouvy ABRA FIT! k IS ABRA Gen Vám fakturujeme za pravidelné služby  za období:  březen 2023
+				</Description>
+				<CatalogueItemIdentification>
+					<ID />
+				</CatalogueItemIdentification>
+				<SellersItemIdentification>
+					<ID />
+				</SellersItemIdentification>
+				<SecondarySellersItemIdentification>
+					<ID />
+				</SecondarySellersItemIdentification>
+				<TertiarySellersItemIdentification>
+					<ID />
+				</TertiarySellersItemIdentification>
+				<BuyersItemIdentification>
+					<ID />
+				</BuyersItemIdentification>
+			</Item>
+		</InvoiceLine>
+		<InvoiceLine>
+			<ID>
+				EA5555555
+			</ID>
+			<DeliveryNoteReference ref="DLS-3847/2023">
+				<LineID>
+					B0IR46666
+				</LineID>
+			</DeliveryNoteReference>
+			<InvoicedQuantity unitCode="ks">
+				2
+			</InvoicedQuantity>
+			<LineExtensionAmount>
+				10666
+			</LineExtensionAmount>
+			<LineExtensionAmountTaxInclusive>
+				12905.86
+			</LineExtensionAmountTaxInclusive>
+			<LineExtensionTaxAmount>
+				2239.86
+			</LineExtensionTaxAmount>
+			<UnitPrice>
+				5333
+			</UnitPrice>
+			<UnitPriceTaxInclusive>
+				6452.93
+			</UnitPriceTaxInclusive>
+			<ClassifiedTaxCategory>
+				<Percent>
+					21
+				</Percent>
+				<VATCalculationMethod>
+					0
+				</VATCalculationMethod>
+				<VATApplicable>
+					true
+				</VATApplicable>
+			</ClassifiedTaxCategory>
+			<Note />
+			<VATNote />
+			<Item>
+				<Description>
+					Předplacené dny konzultanta - čtvrtletní návštěva
+				</Description>
+				<CatalogueItemIdentification>
+					<ID />
+				</CatalogueItemIdentification>
+				<SellersItemIdentification>
+					<ID>
+						F12.15b
+					</ID>
+				</SellersItemIdentification>
+				<SecondarySellersItemIdentification>
+					<ID />
+				</SecondarySellersItemIdentification>
+				<TertiarySellersItemIdentification>
+					<ID />
+				</TertiarySellersItemIdentification>
+				<BuyersItemIdentification>
+					<ID />
+				</BuyersItemIdentification>
+			</Item>
+		</InvoiceLine>
+	</InvoiceLines>
+	<TaxTotal>
+		<TaxSubTotal>
+			<TaxableAmount>
+				10666
+			</TaxableAmount>
+			<TaxAmount>
+				2239.86
+			</TaxAmount>
+			<TaxInclusiveAmount>
+				12905.86
+			</TaxInclusiveAmount>
+			<AlreadyClaimedTaxableAmount>
+				0
+			</AlreadyClaimedTaxableAmount>
+			<AlreadyClaimedTaxAmount>
+				0
+			</AlreadyClaimedTaxAmount>
+			<AlreadyClaimedTaxInclusiveAmount>
+				0
+			</AlreadyClaimedTaxInclusiveAmount>
+			<DifferenceTaxableAmount>
+				10666
+			</DifferenceTaxableAmount>
+			<DifferenceTaxAmount>
+				2239.86
+			</DifferenceTaxAmount>
+			<DifferenceTaxInclusiveAmount>
+				12905.86
+			</DifferenceTaxInclusiveAmount>
+			<TaxCategory>
+				<Percent>
+					21
+				</Percent>
+				<VATApplicable>
+					true
+				</VATApplicable>
+				<LocalReverseChargeFlag>
+					false
+				</LocalReverseChargeFlag>
+			</TaxCategory>
+		</TaxSubTotal>
+		<TaxAmount>
+			2239.86
+		</TaxAmount>
+	</TaxTotal>
+	<LegalMonetaryTotal>
+		<TaxExclusiveAmount>
+			10666
+		</TaxExclusiveAmount>
+		<TaxInclusiveAmount>
+			12905.86
+		</TaxInclusiveAmount>
+		<AlreadyClaimedTaxExclusiveAmount>
+			0
+		</AlreadyClaimedTaxExclusiveAmount>
+		<AlreadyClaimedTaxInclusiveAmount>
+			0
+		</AlreadyClaimedTaxInclusiveAmount>
+		<DifferenceTaxExclusiveAmount>
+			10666
+		</DifferenceTaxExclusiveAmount>
+		<DifferenceTaxInclusiveAmount>
+			12905.86
+		</DifferenceTaxInclusiveAmount>
+		<PayableRoundingAmount>
+			0
+		</PayableRoundingAmount>
+		<PaidDepositsAmount>
+			0
+		</PaidDepositsAmount>
+		<PayableAmount>
+			12905.86
+		</PayableAmount>
+	</LegalMonetaryTotal>
+	<PaymentMeans>
+		<Payment>
+			<PaidAmount>
+				12905.86
+			</PaidAmount>
+			<PaymentMeansCode>
+				42
+			</PaymentMeansCode>
+			<Details>
+				<PaymentDueDate>
+					2023-03-15
+				</PaymentDueDate>
+				<ID>
+					216143537
+				</ID>
+				<BankCode>
+					0300
+				</BankCode>
+				<Name>
+					ČSOB Praha 5 - příjmový
+				</Name>
+				<IBAN>
+					CZ5403000000000216143537
+				</IBAN>
+				<BIC>
+					CEKOCZPP
+				</BIC>
+				<VariableSymbol>
+					15903481
+				</VariableSymbol>
+				<ConstantSymbol />
+				<SpecificSymbol />
+			</Details>
+		</Payment>
+	</PaymentMeans>
+	<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="Signature-1">
+		<SignedInfo>
+			<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+			<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+			<Reference URI="">
+				<Transforms>
+					<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+					<Transform Algorithm="http://www.w3.org/TR/1999/REC-xpath-19991116">
+						<XPath xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+							not(ancestor-or-self::dsig:Signature)
+						</XPath>
+					</Transform>
+				</Transforms>
+				<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+				<DigestValue>
+					q3uQF3fmofrYo0b/4BwtbMcPRwDRrYogDg/LpBR0Kik=
+				</DigestValue>
+			</Reference>
+		</SignedInfo>
+		<SignatureValue>
+			UsiY+UwxNuEhvyEgeya0L+HKYBEFfjsgtzcEkufSOhkDCHIfKGD4J3j0gb2OgEFw
+			4Y4DrcsVbchcZn/biTXFgQaWlxt27kpYZl9BuvE4F/3JvIklGw0sKbfTAL+gEFgz
+			B3YS3zV5/8fAB9HWURfst4yeNU2MfAYjmSt0ihdZ0gNY9x8PLhDv/zT47ziWXDZR
+			/qZ5F3gy6fHR3qDm7r3jwRWeWkqIKMslAijNqKC6YhEBpp8iu1gSGJyVzufuWOy9
+			0OlvOnTZEFR/nq0ZDvYO5rqge4TAeclsUNbbJRC/dC2ZgClGQw9P8heEcvRllYwf
+			5PgYE/no2xzw4QJyhmcl/w==
+		</SignatureValue>
+		<KeyInfo>
+			<X509Data>
+				<X509Certificate>
+					MIIIUDCCBjigAwIBAgIEAVlklzANBgkqhkiG9w0BAQsFADBpMQswCQYDVQQGEwJD
+					WjEXMBUGA1UEYRMOTlRSQ1otNDcxMTQ5ODMxHTAbBgNVBAoMFMSMZXNrw6EgcG/F
+					oXRhLCBzLnAuMSIwIAYDVQQDExlQb3N0U2lnbnVtIFF1YWxpZmllZCBDQSA0MB4X
+					DTIyMDUxNzEyMDAyNVoXDTIzMDYwNjEyMDAyNVowgaUxCzAJBgNVBAYTAkNaMRcw
+					FQYDVQRhEw5OVFJDWi0yNTA5NzU2MzEbMBkGA1UEChMSQUJSQSBTb2Z0d2FyZSBh
+					LnMuMQwwCgYDVQQLEwM0NDcxGjAYBgNVBAMMEU5pa29sIEtleXpsYXJvdsOhMRQw
+					EgYDVQQEDAtLZXl6bGFyb3bDoTEOMAwGA1UEKhMFTmlrb2wxEDAOBgNVBAUTB1A2
+					NTQyODcwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDNJ07jNf06qq/9
+					j5Vh+PcHEl5axjfOg5jD6JaWjwX0Bj1LYWgBfDvMvsIVv0gDpWivwo355RbxL+9N
+					+i99GuA2HtYlvEB+rY9xiBjtih92gwQLmScyui3CLu/pJop9hlyUNWPRXqGMd/lz
+					vfzW3TzzjSJWbTpCMcknkcu0mu+vrFAZY3WYtITn1ytBqaj8LQxcG2NPowTKfTZc
+					+1UYu4GS/YKOjs15RyVdIkmsJKg6XSkEP2Pc5z9RIvEf+w8ULpPyLbSFuMcrNWCj
+					6oPSzH5U7YuuIK0z59NzhxWJlK5Ey/0i0glwPwYSHtU9aBWyarm3nwtezVElbmFP
+					1nFK3w5tAgMBAAGjggPBMIIDvTA+BgNVHREENzA1gRhuaWtvbC5rZXl6bGFyb3Zh
+					QGFicmEuZXWgGQYJKwYBBAHcGQIBoAwTCjE0NDM0OTMyMTYwCQYDVR0TBAIwADCC
+					ASwGA1UdIASCASMwggEfMIIBEAYJZ4EGAQQBEYFSMIIBATCB2AYIKwYBBQUHAgIw
+					gcsagchUZW50byBrdmFsaWZpa292YW55IGNlcnRpZmlrYXQgcHJvIGVsZWt0cm9u
+					aWNreSBwb2RwaXMgYnlsIHZ5ZGFuIHYgc291bGFkdSBzIG5hcml6ZW5pbSBFVSBj
+					LiA5MTAvMjAxNC5UaGlzIGlzIGEgcXVhbGlmaWVkIGNlcnRpZmljYXRlIGZvciBl
+					bGVjdHJvbmljIHNpZ25hdHVyZSBhY2NvcmRpbmcgdG8gUmVndWxhdGlvbiAoRVUp
+					IE5vIDkxMC8yMDE0LjAkBggrBgEFBQcCARYYaHR0cDovL3d3dy5wb3N0c2lnbnVt
+					LmN6MAkGBwQAi+xAAQAwgZsGCCsGAQUFBwEDBIGOMIGLMAgGBgQAjkYBATBqBgYE
+					AI5GAQUwYDAuFihodHRwczovL3d3dy5wb3N0c2lnbnVtLmN6L3Bkcy9wZHNfZW4u
+					cGRmEwJlbjAuFihodHRwczovL3d3dy5wb3N0c2lnbnVtLmN6L3Bkcy9wZHNfY3Mu
+					cGRmEwJjczATBgYEAI5GAQYwCQYHBACORgEGATB9BggrBgEFBQcBAQRxMG8wOwYI
+					KwYBBQUHMAKGL2h0dHA6Ly9jcnQucG9zdHNpZ251bS5jei9jcnQvcHNxdWFsaWZp
+					ZWRjYTQuY3J0MDAGCCsGAQUFBzABhiRodHRwOi8vb2NzcC5wb3N0c2lnbnVtLmN6
+					L09DU1AvUUNBNC8wDgYDVR0PAQH/BAQDAgXgMB8GA1UdJQQYMBYGCCsGAQUFBwME
+					BgorBgEEAYI3CgMMMB8GA1UdIwQYMBaAFA8ofD42ADgQUK49uCGXi/dgXGF4MIGx
+					BgNVHR8EgakwgaYwNaAzoDGGL2h0dHA6Ly9jcmwucG9zdHNpZ251bS5jei9jcmwv
+					cHNxdWFsaWZpZWRjYTQuY3JsMDagNKAyhjBodHRwOi8vY3JsMi5wb3N0c2lnbnVt
+					LmN6L2NybC9wc3F1YWxpZmllZGNhNC5jcmwwNaAzoDGGL2h0dHA6Ly9jcmwucG9z
+					dHNpZ251bS5ldS9jcmwvcHNxdWFsaWZpZWRjYTQuY3JsMB0GA1UdDgQWBBSefyfa
+					J77Frv3YlaN1ynu+qZnRSjANBgkqhkiG9w0BAQsFAAOCAgEAktmRPY38QTJdYt1F
+					75btZPrr8vRgQZluUR6JF9yatdRxUUhBmdHFhLvNZQcBltwukvFnkSrPKnvQSylD
+					iE8yB04jyMEsMJ5ocgwHoM32FBNvyKflhilLzsCiscbPSUKGadItoQWLLJWRDbPF
+					r0cNtT911BWKyNSV+obxCvNw1WRnXV5a+whXN8OSlhnEH13xiDlwuoYmD8cXM+VJ
+					85QddjGcy9yZx8MpEtGOsQMz3T6TqwcwSA1AsTEUVu2Sb76gbTPWYxV73ZrGvOy1
+					6xcUPSJV09FDuTwj0J8C4iem4CxS92Ym71zGfEhLbZ2jSwAGnMGTnJfP7q/6jNUu
+					G17mK5sz8XHFZJu37SN6uEeJ9d0SIEURFeHUP9WjWnfW4gl9CWEz7GuvbWU88O03
+					AqkJ7KDHZBOTyzaQh6VwvgQK0Cgb9HDwykQxdszV6J5cVQRQZUNrHdTDVDh8JUq1
+					SLCTtMyUW6rH+rrVXpgVrG3usc2kEWgRDpCYOucy6zmcZknrRVq33NdZbj+VObXi
+					SsUtlSj1Usz5gfcrV8xQvpHyQEIg2YTtej/7M/4dpzHsnGd+UPLFAyFgozK5vr2N
+					6PKnLsNkJwVuxLmXa58hhvzE6jwwWDn9MpOD4NQd1I5XoJsYDkU6oMi9WHrDVfwT
+					A53TWOfsR9fPS0NpIuO1rnUjy7s=
+				</X509Certificate>
+			</X509Data>
+		</KeyInfo>
+	</Signature>
+</Invoice>

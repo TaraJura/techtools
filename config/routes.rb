@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   resources :questions
   resources :isdoc, only: %i[index show]
   root 'questions#index'
+
+  get '/download_example', to: 'isdoc#download_example', as: 'download_example'
+
 end
