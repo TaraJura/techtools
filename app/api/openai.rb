@@ -12,8 +12,7 @@ class Openai
       parameters: {
         model: @model,
         messages: [{ role: 'user', content: question }],
-        temperature: 0.7,
-        max_tokens: 350
+        temperature: 0.7
       }
     )
     if response['choices'].nil?

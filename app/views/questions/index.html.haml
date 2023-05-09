@@ -1,9 +1,9 @@
-%h1.d-flex.align-items-center.justify-content-center
+%h1.d-flex.align-items-center.justify-content-center.mt-5
   GPT-3.5 turbo model
 = form_with(model: @question) do |form|
   .row.mb-5
     .col
-      = form.text_field :text, class: 'form-control border', id: 'textAreaExample', required: true
+      = form.text_field :text, class: 'form-control border w-50 mx-auto', id: 'textAreaExample', required: true
     .d-flex.align-items-center.justify-content-center.mt-2
       = form.submit 'Ask', class: 'btn btn-primary'
 .row.mt-4
