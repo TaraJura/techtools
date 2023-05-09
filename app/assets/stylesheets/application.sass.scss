@@ -1,1 +1,28 @@
 // Entry point for your Sass build
+.isdoc.show {
+    .isdoc-table {
+      th {
+        padding-left: 0;
+      }
+    }
+  
+    .isdoc-heading {
+      font-size: 0.875rem;
+      font-weight: 300;
+      margin: 2.5rem 0 0 -1rem;
+      padding: 0.5rem;
+      padding-left: 1rem;
+      border-bottom: 1px solid #e0e0e0;
+      background-color: #f2f2f2;
+    }
+  }
+  
+  @media screen and (max-width: 570px) {
+    .isdoc.show {
+      main .container {
+        padding: 1rem;
+      }
+    }
+  }
+
+  
