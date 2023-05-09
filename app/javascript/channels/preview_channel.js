@@ -21,8 +21,6 @@ consumer.subscriptions.create("PreviewChannel", {
       iframe.src = 'isdoc/' + data.path
       iframe2.style.display = 'block'
       iframe2.src = 'isdoc/' + data.path
-      button = document.getElementById('previw-button')
-      button.hidden = false
       window.location.hash = 'invoice-preview2';
     }
   }

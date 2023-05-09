@@ -12,13 +12,12 @@
       .arrow-down.mx-auto
 #isdoc.min-vh-100
   .row
-    %h1.text-center.mt-5
-      Nahraj soubor
+    %h1.text-center.mb-3
+      Přilož soubor
     %form.dropzone.w-50.mx-auto{id: "myId", action: "/"}
   .col
-    %button.btn.btn-success.mt-3#previw-button{type: "button", "data-bs-toggle": "modal", "data-bs-target": "#exampleModal", hidden: true}
-      Náhled
-    = link_to 'Příklad .isdoc', download_example_path, class: 'btn btn-secondary m-3 float-end'
+    = link_to 'Stáhnout vzorový .isdoc', download_example_path, class: 'btn btn-secondary m-3 float-end'
+
   #exampleModal.modal.fade{tabindex: "-1", "aria-labelledby": "exampleModalLabel", "aria-hidden": "true"}
     .modal-dialog.modal-xl
       .modal-content
