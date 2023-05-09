@@ -24,6 +24,9 @@ gem 'ruby-openai'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
+gem 'watir', '~> 7.2', '>= 7.2.2'
+gem 'webdrivers'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]

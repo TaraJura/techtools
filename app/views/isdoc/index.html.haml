@@ -1,18 +1,25 @@
-.row
-  %h1.text-center.mt-5
-    Nahraj .isdoc soubor
-  %form.dropzone{id: "myId", action: "/"}
-.col
-  %button.btn.btn-success.mt-3#previw-button{type: "button", "data-bs-toggle": "modal", "data-bs-target": "#exampleModal", disabled: true}
-    Náhled
-  %button.btn.btn-primary.mt-3#previw-button.float-end{type: "button", "data-bs-toggle": "modal", "data-bs-target": "#exampleModal", disabled: true}
-    Konvertovat do .pdf
-  %button.btn.btn-warning.mt-3#previw-button.me-3.float-end{type: "button", "data-bs-toggle": "modal", "data-bs-target": "#exampleModal", disabled: true}
-    Konvertovat do .png
-  = link_to 'Příklad .isdoc', download_example_path, class: 'btn btn-primary m-3 float-end'
-#exampleModal.modal.fade{tabindex: "-1", "aria-labelledby": "exampleModalLabel", "aria-hidden": "true"}
-  .modal-dialog.modal-xl
-    .modal-content
-      .modal-body
-        %iframe#invoice-preview{src: "", style: "width: 100%; height: 90vh; display: none;"}
-%iframe.text-center#invoice-preview2{src: "", style: "width: 100%; height: 2000px; display: none;"}
+.row.mt-5{style: 'height: 100vh;'}
+  .col-md-8
+    %h1.fw-medium
+      = 'Online ISDOC Reader'
+    %p.mt-5.fs-3.text-justify.text-muted
+      = 'Formát .isdoc se používá pro výměnu faktur mezi podniky, ale vzhledem k jeho specifikům není snadné ho jednoduše zobrazovat. Proto byl vytvořen webový prohlížeč, který umožňuje uživatelům náhled a prohlížení dokumentů v tomto formátu.'
+    = link_to 'Isdoc READER', '#isdoc', class: 'btn btn-primary mt-3'
+  .col-md-4.mt-5
+    = image_tag("/example_isdoc.png", alt: "Example ISDOC", class: "img-fluid" )
+
+.container#isdoc{style: 'height: 100vh;'}
+  .row
+    %h1.text-center.mt-5
+      Nahraj soubor
+    %form.dropzone.w-50.mx-auto{id: "myId", action: "/"}
+  .col
+    %button.btn.btn-success.mt-3#previw-button{type: "button", "data-bs-toggle": "modal", "data-bs-target": "#exampleModal", hidden: true}
+      Náhled
+    = link_to 'Příklad .isdoc', download_example_path, class: 'btn btn-secondary m-3 float-end'
+  #exampleModal.modal.fade{tabindex: "-1", "aria-labelledby": "exampleModalLabel", "aria-hidden": "true"}
+    .modal-dialog.modal-xl
+      .modal-content
+        .modal-body
+          %iframe#invoice-preview{ src: "", style: "width: 100%; height: 90vh; display: none;" }
+  %iframe#invoice-preview2.text-center.mx-auto.mt-5{ src: "", style: "width: 100%; height: 2000px; display: none;" }

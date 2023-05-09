@@ -22,7 +22,8 @@ consumer.subscriptions.create("PreviewChannel", {
       iframe2.style.display = 'block'
       iframe2.src = 'isdoc/' + data.path
       button = document.getElementById('previw-button')
-      button.disabled = false
+      button.hidden = false
+      window.location.hash = 'invoice-preview2';
     }
   }
 });
