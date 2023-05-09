@@ -1,14 +1,14 @@
-.row.mt-5{style: 'height: 100vh;'}
-  .col-md-8
+.row.mt-5.min-vh-100
+  .col-md-8.col-sm-12
     %h1.fw-medium
       = 'Online ISDOC Reader'
     %p.mt-5.fs-3.text-justify.text-muted
       = 'Formát .isdoc se používá pro výměnu faktur mezi podniky, ale vzhledem k jeho specifikům není snadné ho jednoduše zobrazovat. Proto byl vytvořen webový prohlížeč, který umožňuje uživatelům náhled a prohlížení dokumentů v tomto formátu.'
     = link_to 'Isdoc READER', '#isdoc', class: 'btn btn-primary mt-3'
-  .col-md-4.mt-5
+  .col-md-4.mt-5.col-sm-12
     = image_tag("/example_isdoc.png", alt: "Example ISDOC", class: "img-fluid" )
 
-.container#isdoc{style: 'height: 100vh;'}
+#isdoc.min-vh-100
   .row
     %h1.text-center.mt-5
       Nahraj soubor
