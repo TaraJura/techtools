@@ -25,11 +25,16 @@ class InvoicesController < ApplicationController
   def create
     @invoice = Invoice.new
     @invoice.file.attach(params[:file])
-    if @invoice.file.filename.to_s.split('.').last == 'isdoc'
+    if (@invoice.file.filename.to_s.split('.').last == 'isdoc') || (@invoice.file.filename.to_s.split('.').last == 'isdocx')
       @invoice.save!
       if @invoice.file.filename.to_s.split('.').last == 'isdoc'
         ActionCable.server.broadcast 'preview_channel',
                                      { path: @invoice.id,
+                                       user: cookies[:current_user] }
+      elsif @invoice.file.filename.to_s.split('.').last == 'isdocx'
+        path_to_odf = IsdocxExtractor.new(Invoice.find(@invoice.id)).path
+        ActionCable.server.broadcast 'pdf_preview_channel',
+                                     { path: path_to_odf,
                                        user: cookies[:current_user] }
       end
     else

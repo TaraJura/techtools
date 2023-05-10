@@ -1,14 +1,13 @@
 import consumer from "./consumer"
 
-consumer.subscriptions.create("PreviewChannel", {
+consumer.subscriptions.create("PdfPreviewChannel", {
   connected() {
-    console.log("Preview will be send to the iframe once you import the file.")
+    console.log("Pdf Preview channel is ready")
   },
 
   received(data) {
     if (data.path == null) {
       console.log(data)
-      alert(data)
     }
     console.log(data)
     const cookies = document.cookie.split('; ');
@@ -18,7 +17,7 @@ consumer.subscriptions.create("PreviewChannel", {
     if (myCookieValue == String(data.user)) {
       iframe2 = document.getElementById('invoice-preview2')
       iframe2.style.display = 'block'
-      iframe2.src = 'isdoc/' + data.path
+      iframe2.src = data.path
       window.location.hash = '';
       window.location.hash = 'invoice-preview2';
     }
