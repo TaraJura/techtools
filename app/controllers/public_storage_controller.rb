@@ -8,7 +8,6 @@ class PublicStorageController < ApplicationController
   def file
     @instance = Instance.new()
     @instance.public = true
-    @instance.user_id = current_user.id
     @instance.files.attach(params[:file])
     @instance.save
   end
