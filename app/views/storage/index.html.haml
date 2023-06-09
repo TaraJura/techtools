@@ -1,4 +1,9 @@
-%form#storage.dropzone.mt-5{ action: '/target' }
+
+.col-sm-12.mt-5{ data: { controller: 'dropzone', dropzone_path_value: '/storage/file' } }
+  .dropzone{ data: { dropzone_target: 'dropzoneid' } }
+
+
+
 %button.btn.btn-success.mt-3{ type: 'button', onclick: 'location.reload();' }
   Save
 

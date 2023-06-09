@@ -2,7 +2,7 @@
 
 class PublicStorageController < ApplicationController
   def index
-    @instances = Instance.where(public: true)
+    @instances = Instance.where(public: true).order(created_at: :desc)
   end
 
   def file
