@@ -3,9 +3,15 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import "./channels"
 
-document.addEventListener('turbo:load', () => {
-  let myDropzone = new Dropzone("form#myId", { url: "/invoices"});
+let currentPath = window.location.pathname;
 
-  const myModal = document.getElementById('myModal')
-  const myInput = document.getElementById('myInput')
-})
+if (currentPath == "/isdoc") {
+  document.addEventListener('turbo:load', () => {
+    let myDropzone = new Dropzone("form#myId", { url: "/invoices"});
+
+    const myModal = document.getElementById('myModal')
+    const myInput = document.getElementById('myInput')
+  })
+} else if (currentPath == "/storage") {
+  let myDropzone = new Dropzone("form#storage", { url: "/storage/file"});
+}

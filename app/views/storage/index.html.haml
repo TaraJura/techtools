@@ -1,0 +1,15 @@
+%form#storage.dropzone.mt-5{ action: '/target' }
+%button.btn.btn-success.mt-3{ type: 'button', onclick: 'location.reload();' }
+  Save
+
+#instances.flex.mt-5
+.table
+  %thead
+  %tbody
+  - @instances.each do |instance|
+    %tr
+      %td
+        = instance.created_at.strftime('%d.%m.%Y %H:%M')
+      %td
+        = link_to instance.files.filename, rails_blob_path(instance.files, disposition: 'attachment')
+      %br
