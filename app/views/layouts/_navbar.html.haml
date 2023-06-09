@@ -7,14 +7,16 @@
       %span.navbar-toggler-icon
     #navbarNavAltMarkup.collapse.navbar-collapse
       .navbar-nav
-        = link_to 'ChatBot', questions_path, class: 'nav-link text-light nav-link'
-        = link_to 'Isdoc READER', isdoc_index_path, class: 'nav-link text-light nav-link ms-2', data: { turbo: false }
-        = link_to 'Uložiště', storage_index_path, class: 'nav-link text-light nav-link ms-2', data: { turbo: false }
-//    - if user_signed_in?
-//      .d-flex.align-items-center
-//        = link_to 'Profile', edit_user_registration_path, class: 'btn btn-warning me-2'
-//        = button_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-outline-light me-2'
-//    - else
-//      .d-flex.align-items-center
-//        = link_to 'Login', new_user_session_path, class: 'btn btn-outline-light me-2'
-//        = link_to 'Register', new_user_registration_path, class: 'btn btn-warning me-2'
+        = link_to 'ChatBot', questions_path, class: 'nav-link text-light nav-link ms-2'
+        = link_to 'Isdoc READER', isdoc_index_path, class: 'nav-link text-light nav-link ms-2'
+        = link_to 'Uložiště', storage_index_path, class: 'nav-link text-light nav-link ms-2'
+        = link_to 'Veřejné Uložiště', public_storage_index_path, class: 'nav-link text-light nav-link ms-2'
+    - unless mobile?
+      - if user_signed_in?
+        .d-flex.align-items-center
+          = link_to 'Profile', edit_user_registration_path, class: 'btn btn-warning me-2'
+          = button_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-outline-light me-2'
+      - else
+        .d-flex.align-items-center
+          = link_to 'Login', new_user_session_path, class: 'btn btn-outline-light me-2'
+          = link_to 'Register', new_user_registration_path, class: 'btn btn-warning me-2'

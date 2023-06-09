@@ -3,6 +3,7 @@
 class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token
   before_action :cookie_user
+  helper_method :mobile?
   # before_action :authenticate_user!
 
   def cookie_user
@@ -12,5 +13,9 @@ class ApplicationController < ActionController::Base
       value: SecureRandom.uuid,
       expires: 8.hours.from_now
     }
+  end
+
+  def mobile?
+    request.user_agent =~ /Mobile|webOS/
   end
 end
