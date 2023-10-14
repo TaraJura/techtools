@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.2'
+ruby '3.2.2'
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
 gem 'devise'
@@ -14,7 +14,6 @@ gem 'image_processing', '>= 1.2'
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'mini_magick'
-gem 'mysql2', '~> 0.5'
 gem 'nokogiri'
 gem 'pry-rails'
 gem 'puma', '~> 5.0'
@@ -28,6 +27,7 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'watir', '~> 7.2', '>= 7.2.2'
 gem 'webdrivers'
+gem 'pg'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
@@ -35,12 +35,6 @@ end
 
 group :development do
   gem 'web-console'
-end
-
-group :test do
-  gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
 
 group :development, :test do

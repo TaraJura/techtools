@@ -3,6 +3,10 @@ development:
     address: localhost
     port: 1025
     openssl_verify_mode: none
+  database:
+    username: novakj
+    password: password
+    name: techtools_development
 
 test:
   smtp:
