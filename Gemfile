@@ -26,8 +26,8 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'watir', '~> 7.2', '>= 7.2.2'
-gem 'webdrivers'
 gem 'pg'
+gem 'selenium-webdriver', '>= 4.11'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
