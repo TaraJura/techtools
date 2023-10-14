@@ -2,7 +2,7 @@
 
 class Openai
   def initialize
-    api_key = File.read('config/openai_api.key')
+    api_key = Rails.application.credentials.openai[:"api-key"]
     @client = OpenAI::Client.new(access_token: api_key)
     @model = 'gpt-3.5-turbo'
   end
