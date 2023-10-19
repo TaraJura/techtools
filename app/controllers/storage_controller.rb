@@ -10,6 +10,7 @@ class StorageController < ApplicationController
   def file
     @instance = Instance.new()
     @instance.user_id = current_user.id
+    @instance.ip_address = request.remote_ip  # <-- Add this line to save the IP address
     @instance.files.attach(params[:file])
     @instance.save!
   end

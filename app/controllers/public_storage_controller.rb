@@ -8,6 +8,7 @@ class PublicStorageController < ApplicationController
   def file
     @instance = Instance.new()
     @instance.public = true
+    @instance.ip_address = request.remote_ip  # <-- Add this line to save the IP address
     @instance.user_id = User.first.id
     @instance.files.attach(params[:file])
     @instance.save
