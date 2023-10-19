@@ -7,13 +7,35 @@
   Save
 
 #instances.flex.mt-5
-  .table
+  .table.mt-4
     %thead
+      %tr
+        .row
+          .col
+            %th
+              %h3 IP Address
+          .col
+            %th
+              %h3 Date Uploaded
+          .col
+            %th
+              %h3 File Name
+          .col
+            %th
+              %h3 Delete
     %tbody
     - @instances.each do |instance|
       %tr
-        %td
-          = instance.created_at.strftime('%d.%m.%Y %H:%M')
-        %td
-          = link_to truncate(instance.files.filename.to_s, length: 50, omission: '...'), rails_blob_path(instance.files, disposition: 'attachment')
-      %br
+        .row
+          .col
+            %td
+              = instance.ip_address || 'Unknown'
+          .col
+            %td
+              = instance.created_at.strftime('%d.%m.%Y %H:%M')
+          .col
+            %td
+              = link_to truncate(instance.files.filename.to_s, length: 30, omission: '...'), rails_blob_path(instance.files, disposition: 'attachment')
+          .col
+            %td
+              = button_to 'Delete', delete_public_storage_path(instance.id), method: :delete, class: 'btn btn-danger'
