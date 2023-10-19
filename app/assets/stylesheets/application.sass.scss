@@ -5,7 +5,7 @@
         padding-left: 0;
       }
     }
-  
+
     .isdoc-heading {
       font-size: 0.875rem;
       font-weight: 300;
@@ -16,7 +16,7 @@
       background-color: #f2f2f2;
     }
   }
-  
+
   @media screen and (max-width: 570px) {
     .isdoc.show {
       main .container {
@@ -44,4 +44,15 @@
   100% {
     transform: translateY(0);
   }
+}
+
+.plain-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  outline: inherit;
 }

@@ -12,4 +12,10 @@ class PublicStorageController < ApplicationController
     @instance.files.attach(params[:file])
     @instance.save
   end
+
+  def destroy
+    @instance = Instance.find(params[:id])
+    @instance.destroy
+    redirect_to root_path, notice: 'File was successfully deleted.'
+  end
 end
