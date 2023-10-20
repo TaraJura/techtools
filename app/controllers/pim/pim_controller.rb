@@ -2,7 +2,12 @@
 module Pim
   class PimController < ApplicationController
     def binance
-      render json: { message: 'Hello from PIM' }
+
+
+
+
+
+      render json: { message: 'Krypto nakoupeno' }
     end
   end
 end
