@@ -13,4 +13,9 @@ Rails.application.routes.draw do
   post 'public_storage/file', to: 'public_storage#file'
   get '/download_example', to: 'isdoc#download_example', as: 'download_example'
   delete '/public_storage/:id', to: 'public_storage#destroy', as: 'delete_public_storage'
+
+
+  namespace :pim do
+    get '/totojetajnyendpointabytonetipnulzadnyrobot', to: 'pim#binance'
+  end
 end
